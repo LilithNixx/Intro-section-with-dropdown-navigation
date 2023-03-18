@@ -124,18 +124,28 @@ body {
             cursor:pointer;
             margin-right: 10px;
         }
-        //hamburguer menu is shown when it reaches 900px
+       
         .open-menu {
+             //hamburguer menu is shown when it reaches 900px
             display:none;
+
             @media screen and (max-width: 900px) {
-               
-                    display: block;
-                
+                display: block;
+                //if it's clicked it disappears
+                .open-menu-inactive {
+                    display: none;
+                }
              }
         }
         //cross icon doesn't show if not activated
         .close-menu {
             display: none;
+            @media screen and (max-width: 900px) {
+                .close-menu-active {
+                    display: block;
+                }
+            }
+
         }
     
         .general-ul {  
