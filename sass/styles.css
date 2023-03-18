@@ -1,0 +1,401 @@
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+body {
+  font-family: "Epilogue", sans-serif;
+  font-size: 18px;
+  background-color: hsl(0, 0%, 98%);
+}
+
+.contain-all {
+  width: 100%;
+}
+@media screen and (max-width: 900px) {
+  .contain-all {
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+    border: 0.2px solid hsla(0, 0%, 41%, 0.705);
+  }
+}
+.contain-all header {
+  width: 100%;
+  display: flex;
+}
+@media screen and (max-width: 900px) {
+  .contain-all header {
+    width: 100%;
+    justify-content: space-between;
+    margin: 0 auto;
+    border: 1px solid forestgreen;
+  }
+}
+.contain-all header .logo {
+  width: 3.9rem;
+  height: 1.5rem;
+  margin: 1em 3em 1em 1em;
+}
+.contain-all header .nav {
+  width: 87%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (max-width: 900px) {
+  .contain-all header .nav {
+    display: none;
+  }
+  .contain-all header .nav .nav-visible {
+    display: block;
+    width: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    box-shadow: -166px -50px 0 50px rgba(0, 0, 0, 0.5);
+    background-color: hsl(0, 0%, 98%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 30px;
+  }
+}
+.contain-all header .close-menu, .contain-all header .open-menu {
+  border: 0;
+  font-size: 1.5rem;
+  background-color: transparent;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.contain-all header .open-menu {
+  display: none;
+}
+@media screen and (max-width: 900px) {
+  .contain-all header .open-menu {
+    display: block;
+  }
+}
+.contain-all header .close-menu {
+  display: none;
+}
+.contain-all header .general-ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.contain-all header .general-ul a {
+  text-decoration: none;
+  color: hsla(0, 0%, 41%, 0.705);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding-right: 2em;
+}
+@media screen and (max-width: 900px) {
+  .contain-all header .general-ul a {
+    padding: 0;
+  }
+}
+.contain-all header .general-ul a:hover {
+  color: hsl(0, 0%, 8%);
+}
+.contain-all header .general-ul .features-ul {
+  position: absolute;
+  top: 50px;
+  left: 90px;
+  background-color: white;
+  color: hsla(0, 0%, 41%, 0.705);
+  font-size: 0.8rem;
+  font-weight: 400;
+  border-radius: 5px;
+  box-shadow: 0 3px 5px 7px hsla(0, 2%, 65%, 0.205);
+  padding: 1.6em;
+  visibility: hidden;
+}
+.contain-all header .general-ul .features-ul li {
+  padding-bottom: 10px;
+}
+.contain-all header .general-ul .features-ul img {
+  padding-right: 5px;
+}
+.contain-all header .general-ul .company-ul {
+  position: absolute;
+  top: 50px;
+  left: 250px;
+  background-color: white;
+  color: hsla(0, 0%, 41%, 0.705);
+  font-size: 0.8rem;
+  font-weight: 400;
+  border-radius: 5px;
+  box-shadow: 0 3px 5px 7px hsla(0, 2%, 65%, 0.205);
+  padding: 1.6em;
+  visibility: hidden;
+}
+.contain-all header .general-ul .company-ul li {
+  padding-bottom: 10px;
+}
+.contain-all header .general-ul .company-ul img {
+  padding-right: 5px;
+}
+@media screen and (max-width: 900px) {
+  .contain-all header .general-ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.3em;
+    align-self: flex-start;
+  }
+}
+.contain-all header .bnts-ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.contain-all header .bnts-ul a {
+  text-decoration: none;
+  color: hsla(0, 0%, 41%, 0.705);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding-right: 2em;
+}
+@media screen and (max-width: 900px) {
+  .contain-all header .bnts-ul a {
+    padding: 0;
+  }
+}
+.contain-all header .bnts-ul a:hover {
+  color: hsl(0, 0%, 8%);
+}
+.contain-all header .bnts-ul .btn-register {
+  font-weight: 700;
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: 1px solid hsla(0, 0%, 41%, 0.705);
+  background-color: hsl(0, 0%, 98%);
+  font-family: "Epilogue", sans-serif;
+  cursor: pointer;
+  color: hsla(0, 0%, 41%, 0.705);
+  padding: 6px 15px;
+}
+.contain-all header .bnts-ul .btn-register a {
+  padding-right: 0;
+}
+@media screen and (max-width: 900px) {
+  .contain-all header .bnts-ul .btn-register {
+    padding: 10px 50px;
+  }
+}
+.contain-all header .bnts-ul .btn-register:hover {
+  border: 1px solid hsl(0, 0%, 8%);
+  color: hsl(0, 0%, 8%);
+}
+@media screen and (max-width: 900px) {
+  .contain-all header .bnts-ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    gap: 10px;
+  }
+}
+.contain-all main {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 900px) {
+  .contain-all main {
+    width: 50%;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+}
+.contain-all main .info-container {
+  width: 50%;
+}
+@media screen and (max-width: 900px) {
+  .contain-all main .info-container {
+    order: 2;
+    width: 100%;
+  }
+}
+.contain-all main .info-container .info {
+  margin: 9em 5.5em 6em 7em;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-around;
+  gap: 2em;
+}
+@media screen and (max-width: 900px) {
+  .contain-all main .info-container .info {
+    margin: 2.5em 1em 2em 1em;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.contain-all main .info-container .info h1 {
+  font-size: 3.5em;
+  font-weight: 700;
+  color: hsl(0, 0%, 8%);
+  max-width: 490px;
+}
+@media screen and (max-width: 900px) {
+  .contain-all main .info-container .info h1 {
+    font-size: 2.2em;
+    width: 100%;
+    text-align: center;
+  }
+  .contain-all main .info-container .info h1 br {
+    display: none;
+  }
+}
+@media screen and (max-width: 590px) {
+  .contain-all main .info-container .info h1 {
+    font-size: 1.5em;
+  }
+}
+.contain-all main .info-container .info p {
+  color: hsla(0, 0%, 41%, 0.705);
+  font-size: 1rem;
+  line-height: 22px;
+  max-width: 420px;
+}
+@media screen and (max-width: 900px) {
+  .contain-all main .info-container .info p {
+    font-size: 0.9em;
+    text-align: center;
+    max-width: 340px;
+  }
+}
+@media screen and (max-width: 590px) {
+  .contain-all main .info-container .info p {
+    font-size: 0.8em;
+    border: 1px solid firebrick;
+  }
+}
+.contain-all main .info-container .info .btn-learn-more {
+  font-weight: 700;
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: 1px solid hsla(0, 0%, 41%, 0.705);
+  background-color: hsl(0, 0%, 8%);
+  font-family: "Epilogue", sans-serif;
+  cursor: pointer;
+  color: hsl(0, 0%, 98%);
+}
+@media screen and (max-width: 900px) {
+  .contain-all main .info-container .info .btn-learn-more {
+    padding: 10px 15px;
+  }
+}
+.contain-all main .info-container .info .btn-learn-more:hover {
+  border: 1px solid hsl(0, 0%, 8%);
+  color: hsl(0, 0%, 8%);
+  background-color: hsl(0, 0%, 98%);
+}
+.contain-all main .info-container .brands {
+  margin: 0 4.5em;
+  display: flex;
+  justify-content: space-around;
+  max-width: 460px;
+}
+.contain-all main .info-container .brands img {
+  width: 3.3em;
+  height: 1.4em;
+}
+@media screen and (max-width: 900px) {
+  .contain-all main .info-container .brands {
+    margin: 1em 0 4em 0;
+  }
+}
+.contain-all main .img-container {
+  width: 31%;
+  margin: 3em;
+  margin-right: 5em;
+}
+@media screen and (max-width: 900px) {
+  .contain-all main .img-container {
+    order: 1;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
