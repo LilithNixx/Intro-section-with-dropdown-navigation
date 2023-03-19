@@ -68,14 +68,15 @@ body {
 
     header {
         width: 100%;
-    
+
         display: flex;
-    
+        
         @media screen and (max-width: 900px) {
             width: 100%;
-            justify-content: space-between;
             margin: 0 auto;
-            border: 1px solid forestgreen;
+            
+            display: flex;
+            justify-content: space-between;
         }
     
         .logo {
@@ -90,22 +91,30 @@ body {
     
             display: flex;
             align-items: center;
-            justify-content: space-between;
-    
+            
+            .nav-text {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
             @media screen and (max-width: 900px) {
-               display: none;
-                //the nav is shown when hamburguer icon is clicked. And the class nav-visible is applied
+                justify-content: flex-end; //to move the icon at the end while closed
+                .nav-text {
+                    display: none;
+                }
+                //the nav is shown when hamburguer icon is clicked and classList changes from .nav to .nav-visible:
                 .nav-visible {
-                    display: block;
                     width: 50%;
-    
+                    padding: 20px;
+                    
                     position: absolute;
                     top: 0;
                     right: 0;
                     bottom: 0;
-                
-                    padding: 20px;
-                    box-shadow: -166px -50px 0 50px rgba(0, 0, 0, .5);
+
+                    box-shadow: -166px -50px 0 17px rgba(0, 0, 0, .5);
                     background-color: variables.$almost-White;
                 
                     display: flex;
@@ -113,129 +122,111 @@ body {
                     align-items: flex-end;
                     justify-content: flex-start;
                     gap: 30px;
+                    order: 2;
                 }
             }
-        }
 
-        //MENU ICON:
-        .menu-icon {
-            border: 0;
-            font-size: 1.5rem;
-            background-color: transparent;
-            cursor:pointer;
-            margin-right: 10px;
-            
-            display: none;
+            //MENU ICON:
+            .menu-icon { 
+                display: none;
 
-            @media screen and (max-width: 900px) {
-                display: block;
+                @media screen and (max-width: 900px) {
+                    display: flex;
+                    align-items: center;
+                    order: 1;
+                    z-index: 2;
+                    border: 0;
+                    font-size: 1.5rem;
+                    background-color: transparent;
+                    cursor:pointer;
+                    margin-right: 10px;
+                }
+            }
+ 
+            .general-ul {  
+                @include nav-ul;
+                a {
+                    @include a;
+                    
+                    @media screen and (max-width: 900px) {
+                        padding: 0;
+                    }
+                }
+                
+                a:hover {
+                    color: variables.$almost-Black;
+                }
+                
+                #features {
+                    border: 1px solid red;
+                }
+                .features-ul {
+                    @include submenu(50px, 90px);
+                    visibility: hidden;
+                }
+        
+                .company-ul {
+                    @include submenu(50px, 250px);
+                    visibility: hidden;
+                }
+
+                @media screen and (max-width: 900px) {
+                    visibility: visible;
+                    display:flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    gap: 1.3em;
+                    align-self: flex-start;
+                }
+            }
+        
+            .bnts-ul {
+                @include nav-ul;
+                
+                a {
+                    @include a;
+                    @media screen and (max-width: 900px) {
+                        padding: 0;
+                    }
+                }
+                
+                a:hover {
+                    color: variables.$almost-Black;
+                }
+        
+                .btn-register{
+                    @include btn(variables.$medium-Gray, variables.$almost-White);
+                    padding: 6px 15px;
+                    
+                    a {
+                        padding-right: 0;
+                    }
+
+                    @media screen and (max-width: 900px) {
+                        padding: 10px 50px;
+                    }
+                    
+                }
+        
+                .btn-register:hover {
+                    border: 1px solid variables.$almost-Black;
+                    color: variables.$almost-Black;
+                }
+
+                @media screen and (max-width: 900px) {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    align-self: center;
+                    gap: 10px;
+                }
             }
         }
         
-       /* .open-menu {
-             //hamburguer menu is shown when it reaches 900px
-            display:none;
-
-            @media screen and (max-width: 900px) {
-                display: block;
-                //if it's clicked it disappears
-                .open-menu-inactive {
-                    display: none;
-                }
-             }
-        }
-        //cross icon doesn't show if not activated
-        .close-menu {
-            display: none;
-            @media screen and (max-width: 900px) {
-                .close-menu-active {
-                    display: block;
-                }
-            }
-
-        }*/
-    
-        .general-ul {  
-            @include nav-ul;
-    
-            a {
-                @include a;
-                
-                @media screen and (max-width: 900px) {
-                    padding: 0;
-                    
-                 }
-            }
-            
-            a:hover {
-                color: variables.$almost-Black;
-            }
-            
-            #features {
-                border: 1px solid red;
-            }
-            .features-ul {
-                @include submenu(50px, 90px);
-                visibility: hidden;
-            }
-    
-            .company-ul {
-                @include submenu(50px, 250px);
-                visibility: hidden;
-            }
-
-            @media screen and (max-width: 900px) {
-                display:flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                gap: 1.3em;
-                align-self: flex-start;
-             }
-        }
-    
-        .bnts-ul {
-            @include nav-ul;
-            
-            a {
-                @include a;
-                @media screen and (max-width: 900px) {
-                       padding: 0;
-                }
-            }
-            
-            a:hover {
-                color: variables.$almost-Black;
-            }
-    
-            .btn-register{
-                @include btn(variables.$medium-Gray, variables.$almost-White);
-                padding: 6px 15px;
-                
-                a {
-                    padding-right: 0;
-                }
-
-                @media screen and (max-width: 900px) {
-                    padding: 10px 50px;
-                 }
-                
-            }
-    
-            .btn-register:hover {
-                border: 1px solid variables.$almost-Black;
-                color: variables.$almost-Black;
-            }
-
-            @media screen and (max-width: 900px) {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                align-self: center;
-                gap: 10px;
-            }
-        }
     }
+
+        
     
     main {
         display: flex;

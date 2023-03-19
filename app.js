@@ -46,13 +46,22 @@ company.addEventListener('click', () => {
 
 menuIcon.addEventListener('click', () => {
     const menuIcon2 = document.querySelector('.menu-icon i');
-    console.log(menuIcon2.className);
+    const navText = document.querySelector('.nav-text');
+    
+  
     if (menuIcon2.className === 'bi bi-list'){
-        nav.className = 'nav-visible'; //nav becomes visible
-        menuIcon2.className = 'bi bi-x-square';
+        navText.classList = 'nav-visible'; //nav is visible
+        menuIcon2.classList = 'bi bi-x-square'; 
+        console.log(menuIcon2.className);
+        console.log(navText.classList);
     } else if (menuIcon2.className === 'bi bi-x-square'){
-        nav.classList.remove = 'nav-visible';
+        navText.classList.remove = 'nav-visible';
+        navText.classList = 'nav-text';
         menuIcon2.className = 'bi bi-list';
-    }
+        console.log(menuIcon2.className);
+        console.log(navText.classList);
+    } 
 });
+
+
 
