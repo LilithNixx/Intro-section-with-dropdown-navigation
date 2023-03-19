@@ -116,16 +116,23 @@ body {
                 }
             }
         }
-        //hamburguer menu
-        .close-menu, .open-menu {
+
+        //MENU ICON:
+        .menu-icon {
             border: 0;
             font-size: 1.5rem;
             background-color: transparent;
             cursor:pointer;
             margin-right: 10px;
+            
+            display: none;
+
+            @media screen and (max-width: 900px) {
+                display: block;
+            }
         }
-       
-        .open-menu {
+        
+       /* .open-menu {
              //hamburguer menu is shown when it reaches 900px
             display:none;
 
@@ -146,7 +153,7 @@ body {
                 }
             }
 
-        }
+        }*/
     
         .general-ul {  
             @include nav-ul;
@@ -159,11 +166,14 @@ body {
                     
                  }
             }
-    
+            
             a:hover {
                 color: variables.$almost-Black;
             }
-    
+            
+            #features {
+                border: 1px solid red;
+            }
             .features-ul {
                 @include submenu(50px, 90px);
                 visibility: hidden;

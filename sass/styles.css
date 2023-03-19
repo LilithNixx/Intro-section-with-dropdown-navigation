@@ -94,6 +94,28 @@ body {
 .contain-all header {
   width: 100%;
   display: flex;
+  /* .open-menu {
+        //hamburguer menu is shown when it reaches 900px
+       display:none;
+
+       @media screen and (max-width: 900px) {
+           display: block;
+           //if it's clicked it disappears
+           .open-menu-inactive {
+               display: none;
+           }
+        }
+   }
+   //cross icon doesn't show if not activated
+   .close-menu {
+       display: none;
+       @media screen and (max-width: 900px) {
+           .close-menu-active {
+               display: block;
+           }
+       }
+
+   }*/
 }
 @media screen and (max-width: 900px) {
   .contain-all header {
@@ -135,23 +157,18 @@ body {
     gap: 30px;
   }
 }
-.contain-all header .close-menu, .contain-all header .open-menu {
+.contain-all header .menu-icon {
   border: 0;
   font-size: 1.5rem;
   background-color: transparent;
   cursor: pointer;
   margin-right: 10px;
-}
-.contain-all header .open-menu {
   display: none;
 }
 @media screen and (max-width: 900px) {
-  .contain-all header .open-menu {
+  .contain-all header .menu-icon {
     display: block;
   }
-}
-.contain-all header .close-menu {
-  display: none;
 }
 .contain-all header .general-ul {
   display: flex;
@@ -172,6 +189,9 @@ body {
 }
 .contain-all header .general-ul a:hover {
   color: hsl(0, 0%, 8%);
+}
+.contain-all header .general-ul #features {
+  border: 1px solid red;
 }
 .contain-all header .general-ul .features-ul {
   position: absolute;

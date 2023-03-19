@@ -7,9 +7,8 @@ const companyUl = document.getElementById('company-ul');
 //arrows next to the <li>:
 const iconArrowF = document.querySelector('.icon-arrowF');
 const iconArrowC = document.querySelector('.icon-arrowC');
-//hamburguer and cross icons:
-const openMenu = document.querySelector('.open-menu');
-const closeMenu = document.querySelector('.close-menu');
+//menu-icons:
+const menuIcon = document.querySelector('.menu-icon');
 //navegation:
 const nav = document.querySelector('.nav');
 
@@ -45,14 +44,15 @@ company.addEventListener('click', () => {
     }
 });
 
-openMenu.addEventListener('click', () => {
-    nav.className = 'nav-visible'; //nav becomes visible
-    closeMenu.className = 'close-menu-active'; //cross icon appears
-    openMenu.className = 'open-menu-inactive'; //hamburguer icon dessapears
+menuIcon.addEventListener('click', () => {
+    const menuIcon2 = document.querySelector('.menu-icon i');
+    console.log(menuIcon2.className);
+    if (menuIcon2.className === 'bi bi-list'){
+        nav.className = 'nav-visible'; //nav becomes visible
+        menuIcon2.className = 'bi bi-x-square';
+    } else if (menuIcon2.className === 'bi bi-x-square'){
+        nav.classList.remove = 'nav-visible';
+        menuIcon2.className = 'bi bi-list';
+    }
 });
 
-closeMenu.addEventListener('click', () => {
-    //when cross icon is clicked, the nav desappears
-    nav.classList.remove = 'nav-visible';
-    closeMenu.classList.remove = 'close-menu-inactive';
-});
