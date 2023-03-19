@@ -48,7 +48,6 @@ menuIcon.addEventListener('click', () => {
     const menuIcon2 = document.querySelector('.menu-icon i');
     const navText = document.querySelector('.nav-text');
     
-  
     if (menuIcon2.className === 'bi bi-list'){
         navText.classList = 'nav-visible'; //nav is visible
         menuIcon2.classList = 'bi bi-x-square'; 
@@ -61,6 +60,7 @@ menuIcon.addEventListener('click', () => {
         console.log(menuIcon2.className);
         console.log(navText.classList);
     } 
+
 });
 
 
