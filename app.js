@@ -5,8 +5,9 @@ const company = document.getElementById('company');
 const featuresUl = document.getElementById('features-ul');
 const companyUl = document.getElementById('company-ul');
 //arrows next to the <li>:
-const iconArrowF = document.querySelector('.icon-arrowF');
-const iconArrowC = document.querySelector('.icon-arrowC');
+const iconArrow = document.querySelector('icon-arrow');
+const up = document.querySelector('.up');
+const down = document.querySelector('.down');
 //menu-icons:
 const menuIcon = document.querySelector('.menu-icon');
 //navegation:
@@ -14,51 +15,35 @@ const nav = document.querySelector('.nav');
 
 //When clicking on features <li>, the submenu should open or close:
 feature.addEventListener('click', () => {
- 
-    if (featuresUl.style.visibility === 'hidden'){
-        
-        featuresUl.style.visibility = 'visible';
-        iconArrowF.src = "./images/icon-arrow-down.svg";
 
-    } else if (featuresUl.style.visibility === 'visible'){
-       
-        featuresUl.style.visibility = 'hidden';
-        iconArrowF.src = "./images/icon-arrow-up.svg";
+    featuresUl.classList.toggle('submenu-active');
 
+    if (featuresUl.classList === 'submenu-active') {
+
+        companyUl.classList.remove('submenu-active');
     }
+    
 });
 
 //When clicking on company <li>, the submenu should open or close:
 company.addEventListener('click', () => {
     
-    if (companyUl.style.visibility === 'hidden'){
-        
-        companyUl.style.visibility = 'visible';
-        iconArrowC.src = "./images/icon-arrow-down.svg";
-
-    } else if (featuresUl.style.visibility === 'visible'){
-       
-        companyUl.style.visibility = 'hidden';
-        iconArrowC.src = "./images/icon-arrow-up.svg";
-
-    }
+    companyUl.classList.toggle('submenu-active');
+   
 });
+
 
 menuIcon.addEventListener('click', () => {
     const menuIcon2 = document.querySelector('.menu-icon i');
     const navText = document.querySelector('.nav-text');
     
+    //toggles between nav and nav-visible
+    navText.classList.toggle('nav-visible');
+
     if (menuIcon2.className === 'bi bi-list'){
-        navText.classList = 'nav-visible'; //nav is visible
-        menuIcon2.classList = 'bi bi-x-square'; 
-        console.log(menuIcon2.className);
-        console.log(navText.classList);
+        menuIcon2.className = 'bi bi-x-square'; //changing to cross icon
     } else if (menuIcon2.className === 'bi bi-x-square'){
-        navText.classList.remove = 'nav-visible';
-        navText.classList = 'nav-text';
-        menuIcon2.className = 'bi bi-list';
-        console.log(menuIcon2.className);
-        console.log(navText.classList);
+        menuIcon2.className = 'bi bi-list'; //changing to hamburguer icon
     } 
 
 });
