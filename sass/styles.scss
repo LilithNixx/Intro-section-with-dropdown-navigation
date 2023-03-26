@@ -32,6 +32,8 @@
     border-radius: 5px;
     box-shadow: 0 3px 5px 7px hsla(0, 2%, 65%, 0.205);
     padding: 1.6em;
+    max-width: 12em;
+    z-index: 1;
 
     li {
         padding-bottom: 10px;
@@ -42,11 +44,11 @@
     }
 }
 
-    @mixin nav-ul {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-    }
+@mixin nav-ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
 
 
 
@@ -59,22 +61,27 @@ body {
 .contain-all {
     width: 100%;
 
-    @media screen and (max-width: 900px) {
+    @media (max-width: 900px) {
         width: 50%;
         margin: 0 auto;
         position: relative;
         border: 0.2px solid variables.$medium-Gray;
     }
 
+    .shadow {
+        @media (max-width:900px){
+            z-index: 3;
+        }
+    }
     header {
         width: 100%;
 
         display: flex;
         
-        @media screen and (max-width: 900px) {
+        @media (max-width: 900px) {
             width: 100%;
             margin: 0 auto;
-            
+           
             display: flex;
             justify-content: space-between;
         }
@@ -99,7 +106,7 @@ body {
                 justify-content: space-between;
             }
 
-            @media screen and (max-width: 900px) {
+            @media (max-width: 900px) {
                 justify-content: flex-end; //to move the icon at the end while closed
                 .nav-text {
                     display: none;
@@ -110,16 +117,16 @@ body {
                     padding: 20px;
                     
                     position: absolute;
-                    top: 0;
+                    top: 0px;
                     right: 0;
                     bottom: 0;
 
-                    box-shadow: -166px -50px 0 17px rgba(0, 0, 0, .5);
+                   box-shadow: -166px -17px 0 17px rgba(0, 0, 0, 0.502);
                     background-color: variables.$almost-White;
                 
                     display: flex;
                     flex-direction: column;
-                    align-items: flex-end;
+                    align-items: flex-start;
                     justify-content: flex-start;
                     gap: 30px;
                     order: 2;
@@ -130,7 +137,7 @@ body {
             .menu-icon { 
                 display: none;
 
-                @media screen and (max-width: 900px) {
+                @media (max-width: 900px) {
                     display: flex;
                     align-items: center;
                     order: 1;
@@ -145,11 +152,13 @@ body {
             }
  
             .general-ul {  
-                @include nav-ul;
+                @include nav-ul ;
+
+               
                 a {
                     @include a;
                     
-                    @media screen and (max-width: 900px) {
+                    @media (max-width: 900px) {
                         padding: 0;
                     }
                 }
@@ -164,13 +173,21 @@ body {
                 }
                 
                 .features-ul {
-                    @include submenu(50px, 90px);
+                    @include submenu(30px, -3px);
                     display: none;
+
+                    @media (max-width: 900px) {
+                        @include submenu(30px, -3px);
+                    }
                 }
         
                 .company-ul {
-                    @include submenu(50px, 250px);
+                    @include submenu(30px, 110px);
                     display: none;
+
+                    @media (max-width: 900px) {
+                        @include submenu(70px, 2px);
+                    }
                 }
 
                 //activating the submenues:
@@ -178,7 +195,7 @@ body {
                     display: block;
                 }
 
-                @media screen and (max-width: 900px) {
+                @media (max-width: 900px) {
                     display:flex;
                     flex-direction: column;
                     justify-content: flex-start;
@@ -209,7 +226,7 @@ body {
                         padding-right: 0;
                     }
 
-                    @media screen and (max-width: 900px) {
+                    @media (max-width: 900px) {
                         padding: 10px 50px;
                     }
                     
@@ -220,7 +237,7 @@ body {
                     color: variables.$almost-Black;
                 }
 
-                @media screen and (max-width: 900px) {
+                @media (max-width: 900px) {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
@@ -239,7 +256,7 @@ body {
         display: flex;
         justify-content: space-between;
         
-        @media screen and (max-width: 900px) {
+        @media (max-width: 900px) {
             width: 100%;
             flex-direction: column;
             margin: 0 auto;
@@ -248,7 +265,7 @@ body {
         .info-container {
             width: 50%;
             
-            @media screen and (max-width: 900px) {
+            @media (max-width: 900px) {
                order: 2;
                width: 100%;
              }
@@ -261,8 +278,8 @@ body {
                 align-items: start;
                 justify-content: space-around;
                 gap: 2em;
-    
-                @media screen and (max-width: 900px) {
+                
+                @media (max-width: 900px) {
                         margin: 2.5em 1em 2em 1em;
                        
                         justify-content: center;
@@ -276,7 +293,7 @@ body {
                     
                     max-width: 490px;
     
-                    @media screen and (max-width: 900px) {
+                    @media (max-width: 900px) {
                             font-size: 2.2em;
                             width: 100%;
                             text-align: center;
@@ -285,7 +302,7 @@ body {
                             }
                       }
                     
-                      @media screen and (max-width: 590px) {
+                      @media (max-width: 590px) {
                             font-size: 1.5em;
                       }
                 }
@@ -296,7 +313,7 @@ body {
                     line-height: 22px;
                     max-width: 420px;
                     
-                    @media screen and (max-width: 900px) {
+                    @media (max-width: 900px) {
                         font-size: 0.9em;
                         text-align: center;
                         max-width: 340px;
