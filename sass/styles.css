@@ -179,6 +179,9 @@ body {
 .contain-all header .nav .general-ul a:hover {
   color: hsl(0, 0%, 8%);
 }
+.contain-all header .nav .general-ul .icon:hover {
+  filter: hsl(0, 0%, 8%);
+}
 .contain-all header .nav .general-ul .features-ul {
   position: absolute;
   top: 50px;
@@ -288,7 +291,7 @@ body {
 }
 @media screen and (max-width: 900px) {
   .contain-all main {
-    width: 50%;
+    width: 100%;
     flex-direction: column;
     margin: 0 auto;
   }
@@ -354,7 +357,6 @@ body {
 @media screen and (max-width: 590px) {
   .contain-all main .info-container .info p {
     font-size: 0.8em;
-    border: 1px solid firebrick;
   }
 }
 .contain-all main .info-container .info .btn-learn-more {
@@ -378,7 +380,7 @@ body {
   background-color: hsl(0, 0%, 98%);
 }
 .contain-all main .info-container .brands {
-  margin: 0 4.5em;
+  margin: 0 4.5em 3em 4.5em;
   display: flex;
   justify-content: space-around;
   max-width: 460px;
@@ -387,23 +389,42 @@ body {
   width: 3.3em;
   height: 1.4em;
 }
-@media screen and (max-width: 900px) {
+@media (max-width: 500px) {
+  .contain-all main .info-container .brands img {
+    width: 1.3em;
+    height: 1em;
+  }
+}
+@media (max-width: 900px) {
   .contain-all main .info-container .brands {
     margin: 1em 0 4em 0;
   }
 }
+@media (max-width: 500px) {
+  .contain-all main .info-container .brands {
+    margin: 2em auto;
+  }
+}
 .contain-all main .img-container {
-  width: 31%;
+  width: 32%;
+  max-height: 800px;
   margin: 3em;
   margin-right: 5em;
+  background-image: url(../images/image-hero-desktop.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 @media screen and (max-width: 900px) {
   .contain-all main .img-container {
     order: 1;
     width: 100%;
-    height: auto;
+    height: 400px;
     margin: 0 auto;
-    object-fit: contain;
+    background-image: url(../images/image-hero-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 }
 
