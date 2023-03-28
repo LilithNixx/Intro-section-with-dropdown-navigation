@@ -20,7 +20,7 @@
     padding-right: 2em
 }
 
-@mixin submenu ($top, $left){
+@mixin submenu ($top, $left) {
     position: absolute;
     top: $top;
     left: $left;
@@ -32,7 +32,7 @@
     border-radius: 5px;
     box-shadow: 0 3px 5px 7px hsla(0, 2%, 65%, 0.205);
     padding: 1.6em;
-    max-width: 12em;
+    max-width: 14em;
     z-index: 1;
 
     li {
@@ -150,7 +150,7 @@ body {
                     margin-right: 10px;
                 }
             }
- 
+            //features - company -careers -about
             .general-ul {  
                 @include nav-ul ;
 
@@ -171,9 +171,10 @@ body {
                 .icon:hover {
                     filter: variables.$almost-Black;
                 }
+                /*I can't fix the submenues. They appear but the rest of the menu doesnt go down so it can still be visible*/
                 
                 .features-ul {
-                    @include submenu(30px, -3px);
+                    @include submenu(50px, 140px);
                     display: none;
 
                     @media (max-width: 900px) {
@@ -182,7 +183,7 @@ body {
                 }
         
                 .company-ul {
-                    @include submenu(30px, 110px);
+                    @include submenu(50px, 240px);
                     display: none;
 
                     @media (max-width: 900px) {

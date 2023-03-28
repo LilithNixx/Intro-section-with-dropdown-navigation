@@ -60,7 +60,7 @@ menuIcon.addEventListener('click', () => {
     
 
     //toggles between nav-text and nav-visible
-    //I want to toggle in the nav but it doesnt work, it brings problems with the size of the nav cause it's not the 50% of the cointainer but of the nav and the same with the shadow
+    //I want to toggle in the nav but it doesnt work, it brings problems with the size of the nav cause it's not the 50% of the cointainer but of the nav and the same with the shadow. Also, I can't move navText down
     navText.classList.toggle('nav-visible');
 
     if (menuIcon2.className === 'bi bi-list'){
